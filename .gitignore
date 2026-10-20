@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+build/
+dist/
+*.spec
+*.img
+*.dmg
+.idea/
+.vscode/
