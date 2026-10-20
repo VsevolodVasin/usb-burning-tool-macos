@@ -45,6 +45,10 @@ mkdir -p "$STAGE" "$OUT"
   --add-data "$ROOT/THIRD_PARTY.md:." \
   --add-data "$ROOT/NOTICE:." \
   --paths "$ROOT" \
+  --hidden-import burn_tool \
+  --hidden-import burn_tool.window \
+  --hidden-import burn_tool.engine \
+  --collect-all PyQt6 \
   "$ROOT/scripts/run.py"
 
 PLIST="$OUT/Burning Tool.app/Contents/Info.plist"

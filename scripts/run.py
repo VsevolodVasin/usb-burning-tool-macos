@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
-import runpy
+from burn_tool.__main__ import main
 
-runpy.run_module("burn_tool", run_name="__main__")
+main()
