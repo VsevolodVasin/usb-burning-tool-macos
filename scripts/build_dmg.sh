@@ -53,6 +53,8 @@ PLIST="$OUT/Burning Tool.app/Contents/Info.plist"
 
 cp -R "$OUT/Burning Tool.app" "$STAGE/"
 ln -sf /Applications "$STAGE/Applications"
+cp "$ROOT/scripts/Fix Gatekeeper.command" "$STAGE/"
+chmod +x "$STAGE/Fix Gatekeeper.command"
 
 hdiutil create -volname "$VOL" -srcfolder "$STAGE" -ov -fs HFS+ -format UDRW "$RW"
 hdiutil attach -readwrite -noverify -noautoopen "$RW" >/dev/null
@@ -68,13 +70,14 @@ tell application "Finder"
     open
     set current view of container window to icon view
     set toolbar visible of container window to false
-    set the bounds of container window to {200, 120, 740, 480}
+    set the bounds of container window to {200, 120, 740, 520}
     set opts to icon view options of container window
     set icon size of opts to 128
     set text size of opts to 12
     set arrangement of opts to not arranged
-    set position of item "$APP_NAME" of container window to {140, 180}
-    set position of item "Applications" of container window to {400, 180}
+    set position of item "$APP_NAME" of container window to {140, 160}
+    set position of item "Applications" of container window to {400, 160}
+    set position of item "Fix Gatekeeper.command" of container window to {270, 320}
     update without registering applications
     delay 1
     close

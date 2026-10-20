@@ -26,7 +26,7 @@ python3 -m venv .venv
 
 Готовые сборки: [Releases](https://github.com/VsevolodVasin/usb-burning-tool-macos/releases).
 
-Если macOS пишет, что приложение повреждено или не может проверить разработчика:
+Если macOS пишет, что приложение повреждено или не может проверить разработчика — в DMG есть `Fix Gatekeeper.command`, либо:
 
 ```bash
 ./scripts/fix-gatekeeper.sh "/Applications/Burning Tool.app"
